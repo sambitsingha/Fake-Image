@@ -1,27 +1,35 @@
-/* Style for drop zone */
-#drop-zone {
-	width: 300px;
-	height: 200px;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	color: white;
+	background-color: rgb(54, 53, 53);
+}
+#drop-area {
 	border: 2px dashed #ccc;
-	border-radius: 8px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	margin: 20px auto;
-}
-
-#drop-zone.highlight {
-	border-color: #2185d0;
-}
-
-#drop-zone-text {
+	padding: 20px;
 	text-align: center;
+	cursor: pointer;
+}
+#drop-area.highlight {
+	border-color: purple;
+}
+#image-preview {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+img {
+	width: 400px;
+	margin: 20px;
 }
 
-img {
-	max-width: 100%;
-	max-height: 100%;
-	display: block;
-	margin: 20px auto;
+nav img {
+	width: 150px;
+	margin: 0;
+	padding: 0;
 }

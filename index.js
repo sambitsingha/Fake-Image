@@ -1,79 +1,49 @@
-const dropZone = document.getElementById("drop-zone");
-const dropZoneText = document.getElementById("drop-zone-text");
-const uploadedImage = document.getElementById("uploaded-image");
-const fileInput = document.getElementById("file-input");
+function handleDrop(event) {
+	event.preventDefault();
+	document.getElementById("drop-area").classList.remove("highlight");
 
-// Prevent default drag behaviors
-["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
-	dropZone.addEventListener(eventName, preventDefaults, false);
-	document.body.addEventListener(eventName, preventDefaults, false);
-});
+	const files = event.dataTransfer.files;
+	if (files.length !== 2) {
+		alert("Please drop exactly 2 image files.");
+		return;
+	}
 
-// Highlight drop zone when item is dragged over it
-["dragenter", "dragover"].forEach((eventName) => {
-	dropZone.addEventListener(eventName, highlight, false);
-});
-
-// Remove highlight when item is dragged out of drop zone
-["dragleave", "drop"].forEach((eventName) => {
-	dropZone.addEventListener(eventName, unhighlight, false);
-});
-
-// Handle dropped files
-dropZone.addEventListener("drop", handleDrop, false);
-
-// Click event on drop zone triggers file input
-dropZone.addEventListener("click", function () {
-	fileInput.click();
-});
-
-// Handle file input change
-fileInput.addEventListener("change", function () {
-	const files = fileInput.files;
-	handleFiles(files);
-});
-
-// Prevent default actions
-function preventDefaults(e) {
-	e.preventDefault();
-	e.stopPropagation();
-}
-
-// Highlight drop zone when item is dragged over it
-function highlight() {
-	dropZone.classList.add("highlight");
-}
-
-// Remove highlight when item is dragged out of drop zone
-function unhighlight() {
-	dropZone.classList.remove("highlight");
-}
-
-// Handle dropped files
-function handleDrop(e) {
-	const dt = e.dataTransfer;
-	const files = dt.files;
-
-	handleFiles(files);
-}
-
-// Handle files after they're dropped or selected
-function handleFiles(files) {
 	for (let i = 0; i < files.length; i++) {
-		const file = files[i];
-
-		// Check if the file is an image
-		if (file.type.startsWith("image/")) {
-			const reader = new FileReader();
-
-			reader.onload = function (e) {
-				uploadedImage.style.display = "block";
-				uploadedImage.src = e.target.result;
-			};
-
-			reader.readAsDataURL(file);
-		} else {
+		if (!files[i].type.startsWith("image/")) {
 			alert("Please drop only image files.");
+			return;
 		}
+		const reader = new FileReader();
+		reader.onload = function (e) {
+			const image = new Image();
+			image.src = e.target.result;
+			document.getElementById("image-preview").appendChild(image);
+		};
+		reader.readAsDataURL(files[i]);
 	}
 }
+
+document.getElementById("drop-area").addEventListener("click", function () {
+	const input = document.createElement("input");
+	input.type = "file";
+	input.accept = "image/*";
+	input.multiple = true;
+	input.onchange = function (e) {
+		const files = e.target.files;
+		if (files.length !== 2) {
+			alert("Please select exactly 2 image files.");
+			return;
+		}
+
+		for (let i = 0; i < files.length; i++) {
+			const reader = new FileReader();
+			reader.onload = function (event) {
+				const image = new Image();
+				image.src = event.target.result;
+				document.getElementById("image-preview").appendChild(image);
+			};
+			reader.readAsDataURL(files[i]);
+		}
+	};
+	input.click();
+});

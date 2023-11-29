@@ -2,20 +2,28 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Drag and Drop Image Upload</title>
 		<link rel="stylesheet" href="style.css" />
+		<title>Image Upload</title>
 	</head>
 	<body>
-		<div id="drop-zone">
-			<div id="drop-zone-text">Drag & Drop images here or click to upload</div>
+		<header>
+			<nav>
+				<img src="logo-png.png" alt="" />
+			</nav>
+		</header>
+		<div>
+			<h2>Upload Images</h2>
+			<div
+				id="drop-area"
+				ondragover="event.preventDefault(); document.getElementById('drop-area').classList.add('highlight')"
+				ondragleave="document.getElementById('drop-area').classList.remove('highlight')"
+				ondrop="handleDrop(event)"
+			>
+				<p>Drag and drop an image here or click to select</p>
+			</div>
+			<div id="image-preview"></div>
 		</div>
 
-		<img
-			id="uploaded-image"
-			src="#"
-			alt="Uploaded Image"
-			style="display: none"
-		/>
 		<script src="index.js"></script>
 	</body>
 </html>
