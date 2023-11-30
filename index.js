@@ -3,10 +3,10 @@ function handleDrop(event) {
 	document.getElementById("drop-area").classList.remove("highlight");
 
 	const files = event.dataTransfer.files;
-	if (files.length !== 2) {
-		alert("Please drop exactly 2 image files.");
-		return;
-	}
+	// if (files.length !== 2) {
+	// 	alert("Please drop exactly 2 image files.");
+	// 	return;
+	// }
 
 	for (let i = 0; i < files.length; i++) {
 		if (!files[i].type.startsWith("image/")) {
@@ -30,10 +30,6 @@ document.getElementById("drop-area").addEventListener("click", function () {
 	input.multiple = true;
 	input.onchange = function (e) {
 		const files = e.target.files;
-		if (files.length !== 2) {
-			alert("Please select exactly 2 image files.");
-			return;
-		}
 
 		for (let i = 0; i < files.length; i++) {
 			const reader = new FileReader();

@@ -4,12 +4,19 @@
 	box-sizing: border-box;
 }
 body {
-	color: white;
-	background-color: rgb(54, 53, 53);
+	background-image: url(background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: "Poppins", sans-serif;
+	font-family: "Ubuntu", sans-serif;
 }
 #drop-area {
+	background-color: rgba(151, 151, 151, 0.546);
+	backdrop-filter: blur(5px);
+	color: white;
 	border: 2px dashed #ccc;
-	padding: 20px;
+	padding: 20px 0;
+	margin: 0 50px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -18,10 +25,15 @@ body {
 }
 #image-preview {
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	margin-bottom: 10px;
+	margin: 0 40px;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
 }
 img {
 	width: 400px;
@@ -32,4 +44,52 @@ nav img {
 	width: 150px;
 	margin: 0;
 	padding: 0;
+}
+
+.sub-nav ul {
+	width: 300px;
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 20px;
+}
+.sub-nav li {
+	list-style-type: none;
+}
+.sub-nav li:hover {
+	background-color: rgba(107, 107, 107, 0.375);
+	padding: 5px;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+.sub-nav a {
+	color: black;
+	text-decoration: none;
+}
+.image-drop h1 {
+	text-align: center;
+	margin: 10px;
+}
+
+.hero {
+	text-align: center;
+}
+
+.hero h1 {
+	font-size: 4rem;
+}
+
+.hero p {
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+.hero img {
+	width: 250px;
+}
+
+#image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
 }
