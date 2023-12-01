@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="style.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Image Upload</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<img src="logo-png.png" alt="" />
-				<div class="sub-nav">
-					<ul>
-						<a href=""><li>About</li></a>
-						<a href=""><li>Contact</li></a>
-					</ul>
-				</div>
-			</nav>
-		</header>
-		<div class="hero">
-			<h1>Fake Image Detection</h1>
-			<p>Upload your image and see if it's fake or not.</p>
-			<p>
-				Images uploaded here are sent to a Machine Learning Model , which
-				identifies whether it is a fake or real image
-			</p>
-			<div id="image">
-				<span>Real</span>
-				<img src="real_81.jpg" alt="" />
-				<img src="fake_118.jpg" alt="" />
-				<span>Fake</span>
-			</div>
-		</div>
-		<div class="image-drop">
-			<h1>Upload Images</h1>
-			<div
-				id="drop-area"
-				ondragover="event.preventDefault(); document.getElementById('drop-area').classList.add('highlight')"
-				ondragleave="document.getElementById('drop-area').classList.remove('highlight')"
-				ondrop="handleDrop(event)"
-			>
-				<p>Drag and drop an image here or click to select</p>
-			</div>
-			<div id="image-preview"></div>
-		</div>
 
-		<script src="index.js"></script>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<title>Image Upload</title>
+</head>
+
+<body>
+	<header>
+		<nav class="nav">
+			<img src="/images/logo-png.png" alt="" />
+			<div class="sub-nav">
+				<ul>
+					<a href="">
+						<li>About</li>
+					</a>
+					<a href="">
+						<li>Contact</li>
+					</a>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<div class="hero">
+		<h1 id="heading">Fake Image Detection</h1>
+		<p id="sub-heading">Upload your image and see if it's fake or not.</p>
+		<div id="image">
+			<span>Real</span>
+			<img src="/images/real_81.jpg" alt="" />
+			<img src="/images/fake_118.jpg" alt="" />
+			<span>Fake</span>
+		</div>
+	</div>
+	<div class="image-drop">
+		<h1>Upload Images</h1>
+		<div id="drop-area"
+			ondragover="event.preventDefault(); document.getElementById('drop-area').classList.add('highlight')"
+			ondragleave="document.getElementById('drop-area').classList.remove('highlight')" ondrop="handleDrop(event)">
+			<p>Drag and drop an image here or click to select</p>
+		</div>
+		<div id="image-preview"></div>
+		<button id="upload">Upload Image</button>
+	</div>
+	<div class="sub-footer">
+		<h1>How to use the Fake Image Detector</h1>
+		<div class="instruction">
+			<div class="first">
+				<i class="fa-regular fa-file"></i>
+				<span>Choose</span>
+				<p>Choose a JPG image from your device that is less than 5MB</p>
+			</div>
+			<div class="second">
+				<i class="fa-solid fa-cloud-arrow-up"></i>
+				<span>Upload</span>
+				<p>Upload your image and press the "Upload Image" button</p>
+			</div>
+			<div class="third">
+				<i class="fa-regular fa-image"></i>
+				<span>View</span>
+				<p>Examine the outcome of the image you uploaded.</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<img src="/images/logo-transparent-png.png" alt="">
+		<div class="links">
+			<a href="https://github.com/sambitsingha/Fake-Image"><i class="fa-brands fa-github"
+					style="color: black;"></i></a>
+			<a href=mailto:"sambitsingha777@gmail.com"><i class="fa-solid fa-envelope" style="color: black;"></i></a>
+		</div>
+	</div>
+	<script src="index.js"></script>
+	<script src="reveal.js"></script>
+</body>
+
 </html>

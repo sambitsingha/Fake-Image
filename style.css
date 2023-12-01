@@ -11,14 +11,22 @@ body {
 	font-family: "Ubuntu", sans-serif;
 }
 #drop-area {
-	background-color: rgba(151, 151, 151, 0.546);
+	background-color: rgba(202, 202, 202, 0.546);
 	backdrop-filter: blur(5px);
-	color: white;
 	border: 2px dashed #ccc;
-	padding: 20px 0;
+	padding: 40px 0;
 	margin: 0 50px;
 	text-align: center;
 	cursor: pointer;
+	width: 80%;
+}
+#drop-area:hover {
+	background-color: rgba(59, 59, 59, 0.546);
+	transition: 0.5s;
+	color: white;
+}
+#drop-area p {
+	font-size: 20px;
 }
 #drop-area.highlight {
 	border-color: purple;
@@ -33,7 +41,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 img {
 	width: 400px;
@@ -41,7 +49,7 @@ img {
 }
 
 nav img {
-	width: 150px;
+	width: 200px;
 	margin: 0;
 	padding: 0;
 }
@@ -65,6 +73,12 @@ nav img {
 	color: black;
 	text-decoration: none;
 }
+.image-drop {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 .image-drop h1 {
 	text-align: center;
 	margin: 10px;
@@ -72,6 +86,7 @@ nav img {
 
 .hero {
 	text-align: center;
+	margin: 0 40px;
 }
 
 .hero h1 {
@@ -92,4 +107,84 @@ nav img {
 	justify-content: center;
 	align-items: center;
 	font-size: 25px;
+}
+
+#upload {
+	background-color: rgb(36, 136, 251);
+	padding: 12px 18px;
+	margin: 15px 0;
+	border-radius: 10px;
+	border: none;
+	outline: 0;
+	color: white;
+}
+#upload:hover {
+	background-color: rgb(1, 61, 130);
+	cursor: pointer;
+}
+
+.instruction {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+}
+.instruction i {
+	font-size: 60px;
+}
+.instruction span {
+	font-size: 30px;
+}
+
+.instruction p {
+	margin: 20px 10px;
+	font-size: 17px;
+}
+.sub-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		270deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 9, 121, 1) 58%,
+		rgba(0, 212, 255, 1) 100%
+	);
+	color: white;
+	padding-bottom: 30px;
+}
+.sub-footer h1 {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(232, 231, 231, 0.725);
+	backdrop-filter: blur(5px);
+}
+.footer img {
+	width: 250px;
+}
+
+.links {
+	font-size: 35px;
+}
+.links i {
+	margin: 0 5px;
+}
+.links i:hover {
+	font-size: 45px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#copyright {
+	text-align: center;
+	background-color: rgba(232, 231, 231, 0.725);
+	backdrop-filter: blur(5px);
 }
