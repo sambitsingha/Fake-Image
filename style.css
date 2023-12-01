@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-image: url(background.jpg);
+	background-image: url(./images/background.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: "Poppins", sans-serif;
@@ -32,6 +32,9 @@ body {
 	border-color: purple;
 }
 #image-preview {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	margin-bottom: 10px;
 	margin: 0 40px;
